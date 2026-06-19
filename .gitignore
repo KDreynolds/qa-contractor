@@ -1,0 +1,14 @@
+# Binaries
+/qa-contractor
+/static-gen
+/out
+*.exe
+
+# Templ generated
+*_templ.go
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

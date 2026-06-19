@@ -1,0 +1,41 @@
+package templates
+
+import "qa-contractor/templates/components"
+
+templ Contact() {
+	@Base("/contact") {
+		<section class="section">
+			<div class="container">
+				<span class="section-label">Get in Touch</span>
+				<div class="contact-grid">
+					<div class="contact-info">
+						<h2 class="section-title">Let&rsquo;s work together</h2>
+						<p>
+							Whether you need a one-off test audit, ongoing QA
+							support, or help building your automation suite
+							from scratch &mdash; I&rsquo;d love to hear about
+							your project.
+						</p>
+						<div class="contact-methods">
+							<div class="contact-method">
+								<span class="icon">&#9993;</span>
+								<span>kylereynoldsdev@gmail.com</span>
+							</div>
+							<div class="contact-method">
+								<span class="icon">&#128205;</span>
+								<span>Remote &mdash; Worldwide</span>
+							</div>
+							<div class="contact-method">
+								<span class="icon">&#128197;</span>
+								<span>Available for new projects</span>
+							</div>
+						</div>
+					</div>
+					<div>
+						@components.ContactForm()
+					</div>
+				</div>
+			</div>
+		</section>
+	}
+}

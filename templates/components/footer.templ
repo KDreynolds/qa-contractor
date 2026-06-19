@@ -1,0 +1,18 @@
+package components
+
+import (
+	"fmt"
+	"time"
+)
+
+templ Footer() {
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; { fmt.Sprintf("%d", time.Now().Year()) } Kyle Reynolds. All rights reserved.</p>
+			<ul class="footer-links">
+				<li><a href="https://github.com/KDReynolds" target="_blank" rel="noopener">GitHub</a></li>
+				<li><a href="https://www.linkedin.com/in/kyle-reynolds-08b52094" target="_blank" rel="noopener">LinkedIn</a></li>
+			</ul>
+		</div>
+	</footer>
+}

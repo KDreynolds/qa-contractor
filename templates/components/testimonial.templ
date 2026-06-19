@@ -1,0 +1,14 @@
+package components
+
+templ Testimonial(quote, name, role, initials string) {
+	<div class="testimonial-card">
+		<blockquote>{ quote }</blockquote>
+		<div class="testimonial-author">
+			<div class="avatar">{ initials }</div>
+			<div>
+				<div class="name">{ name }</div>
+				<div class="role">{ role }</div>
+			</div>
+		</div>
+	</div>
+}

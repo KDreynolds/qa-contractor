@@ -1,0 +1,56 @@
+package components
+
+templ ContactForm() {
+	<form
+		id="contact-form"
+		hx-post="/contact"
+		hx-swap="outerHTML"
+		hx-indicator="#form-indicator"
+		data-formspree={ FormspreeID() }
+	>
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				required
+				placeholder="Your name"
+			/>
+			<div class="error-msg" id="name-error"></div>
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input
+				type="email"
+				id="email"
+				name="email"
+				required
+				placeholder="you@example.com"
+			/>
+			<div class="error-msg" id="email-error"></div>
+		</div>
+		<div class="form-group">
+			<label for="message">Message</label>
+			<textarea
+				id="message"
+				name="message"
+				required
+				placeholder="Tell me about your project..."
+			></textarea>
+			<div class="error-msg" id="message-error"></div>
+		</div>
+		<button type="submit" class="btn btn-primary">
+			<span id="form-indicator" class="htmx-indicator">Sending...</span>
+			<span class="htmx-indicator-off">Send Message</span>
+		</button>
+	</form>
+}
+
+templ ContactSuccess() {
+	<div id="contact-form" class="form-success">
+		<div class="check">&#10003;</div>
+		<h3>Message sent!</h3>
+		<p>Thank you for reaching out. I&rsquo;ll get back to you within 24 hours.</p>
+	</div>
+}

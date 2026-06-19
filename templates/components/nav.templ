@@ -1,0 +1,38 @@
+package components
+
+templ Nav(currentPath string) {
+	<nav class="nav">
+		<div class="container">
+			<a href="/" class="nav-brand">Kyle Reynolds <span>&middot;</span> QA Contractor</a>
+			<button
+				id="nav-toggle"
+				class="nav-toggle"
+				aria-label="Toggle navigation"
+			>&#9776;</button>
+			<ul id="nav-links" class="nav-links">
+				<li>
+					<a href="/" class={ activeClass(currentPath, "/") }>Home</a>
+				</li>
+				<li>
+					<a href="/services" class={ activeClass(currentPath, "/services") }>Services</a>
+				</li>
+				<li>
+					<a href="/portfolio" class={ activeClass(currentPath, "/portfolio") }>Portfolio</a>
+				</li>
+				<li>
+					<a href="/about" class={ activeClass(currentPath, "/about") }>About</a>
+				</li>
+				<li>
+					<a href="/contact" class={ activeClass(currentPath, "/contact") }>Contact</a>
+				</li>
+			</ul>
+			<div class="nav-right">
+				<button
+					id="theme-toggle"
+					class="theme-toggle"
+					aria-label="Toggle theme"
+				>&#9788;</button>
+			</div>
+		</div>
+	</nav>
+}
