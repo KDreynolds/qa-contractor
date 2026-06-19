@@ -74,13 +74,13 @@ func applyBasePath(html, base string) string {
 	base = strings.TrimSuffix(base, "/")
 
 	// Replace absolute internal paths with base-prefixed versions.
-	// Order matters: longer paths first to avoid partial matches.
+	// Trailing slashes required for GitHub Pages directory-based clean URLs.
 	repl := strings.NewReplacer(
 		`="/static/`, fmt.Sprintf(`="%s/static/`, base),
-		`="/services`, fmt.Sprintf(`="%s/services`, base),
-		`="/portfolio`, fmt.Sprintf(`="%s/portfolio`, base),
-		`="/about`, fmt.Sprintf(`="%s/about`, base),
-		`="/contact`, fmt.Sprintf(`="%s/contact`, base),
+		`="/services`, fmt.Sprintf(`="%s/services/`, base),
+		`="/portfolio`, fmt.Sprintf(`="%s/portfolio/`, base),
+		`="/about`, fmt.Sprintf(`="%s/about/`, base),
+		`="/contact`, fmt.Sprintf(`="%s/contact/`, base),
 		`="/"`, fmt.Sprintf(`="%s/`, base),
 	)
 	return repl.Replace(html)
