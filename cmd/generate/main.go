@@ -70,18 +70,17 @@ func main() {
 }
 
 func applyBasePath(html, base string) string {
-	// Strip trailing slash from base for clean joining
 	base = strings.TrimSuffix(base, "/")
 
 	// Replace absolute internal paths with base-prefixed versions.
-	// Trailing slashes required for GitHub Pages directory-based clean URLs.
+	// Include closing quotes to avoid breaking attributes like href="/" → href="/qa-contractor/ class=".
 	repl := strings.NewReplacer(
 		`="/static/`, fmt.Sprintf(`="%s/static/`, base),
-		`="/services`, fmt.Sprintf(`="%s/services/`, base),
-		`="/portfolio`, fmt.Sprintf(`="%s/portfolio/`, base),
-		`="/about`, fmt.Sprintf(`="%s/about/`, base),
-		`="/contact`, fmt.Sprintf(`="%s/contact/`, base),
-		`="/"`, fmt.Sprintf(`="%s/`, base),
+		`="/services"`, fmt.Sprintf(`="%s/services/"`, base),
+		`="/portfolio"`, fmt.Sprintf(`="%s/portfolio/"`, base),
+		`="/about"`, fmt.Sprintf(`="%s/about/"`, base),
+		`="/contact"`, fmt.Sprintf(`="%s/contact/"`, base),
+		`="/"`, fmt.Sprintf(`="%s/"`, base),
 	)
 	return repl.Replace(html)
 }
