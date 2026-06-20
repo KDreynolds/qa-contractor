@@ -3,9 +3,7 @@ package components
 templ ContactForm() {
 	<form
 		id="contact-form"
-		hx-post="/contact"
-		hx-swap="outerHTML"
-		hx-indicator="#form-indicator"
+		hx-disable
 		data-formspree={ FormspreeID() }
 	>
 		<div class="form-group">
@@ -41,8 +39,8 @@ templ ContactForm() {
 			<div class="error-msg" id="message-error"></div>
 		</div>
 		<button type="submit" class="btn btn-primary">
-			<span id="form-indicator" class="htmx-indicator">Sending...</span>
-			<span class="htmx-indicator-off">Send Message</span>
+			<span id="form-indicator" style="display:none;">Sending...</span>
+			<span id="form-button-text">Send Message</span>
 		</button>
 	</form>
 }
