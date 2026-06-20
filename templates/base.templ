@@ -15,6 +15,7 @@ templ Base(currentPath string) {
 			<title>Kyle Reynolds — QA Contractor</title>
 			<link rel="stylesheet" href="/static/css/style.css"/>
 			<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+			<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 		</head>
 		<body hx-boost="true" hx-target="main" hx-select="main">
 			@components.Nav(currentPath)

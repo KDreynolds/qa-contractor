@@ -634,6 +634,12 @@ a:hover {
 	display: none;
 }
 
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+	border-color: var(--error);
+	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
 .form-success {
 	text-align: center;
 	padding: 3rem 2rem;
