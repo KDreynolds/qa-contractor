@@ -376,6 +376,15 @@ a:hover {
 }
 
 /* Portfolio card specifics */
+.portfolio-card .card-company {
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: var(--accent);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	margin-bottom: 0.5rem;
+}
+
 .portfolio-card .card-image {
 	height: 180px;
 	border-radius: var(--radius-sm);
